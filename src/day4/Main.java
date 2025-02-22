@@ -4,15 +4,11 @@ import java.util.Iterator;
 import java.util.Scanner;
 
 public class Main {
-	//A. Loops
+	
 	public static void main(String[] args) {
-		double sum=0.0;
-		int n =50000;
-		for(int i=1; i<=n; i++) {
-			sum=(double)sum+1.0/i;
-		}		
-		System.out.println("Harmonic(n) = " +sum);
-	}
+		checkerBoard();
+}
+
 
 	//A. Data Types and Variables
 	//1
@@ -244,5 +240,45 @@ public class Main {
 		}
 		
 		System.out.println("Sum of the squares is " + sum);
+	}
+	
+	//6 
+	public static void Sum6() {
+		double sum1=0.0;
+		double sum2=0.0;
+		int n =50000;
+		for(int i=1; i<=n; i++) {
+			sum1=(double)sum1+(double)1.0/i;
+		}
+		for(int j=50000; j>=1; j--) {
+			sum2=(double)1.0/j+(double)sum2;
+		}
+		System.out.println("Harmonic(n) = " +sum1);
+		System.out.println("Harmonic(n) = " +sum2);
+	}
+	
+	//7
+	public static void squareBoard() {
+		for(int i=1; i<=5; i++) {
+			for(int j=1; j<=5;j++) {
+				System.out.print("# ");
+			}
+			System.out.println();
+		}
+	}
+	
+	//8
+	public static void checkerBoard() {
+		for(int i=1; i<=7; i++) {
+			for(int j=1; j<=7; j++) {
+				if(i%2==1) {
+					System.out.print("# ");
+				}
+				else {
+					System.out.print(" #");
+				}
+			}
+			System.out.println();
+		}
 	}
 }
