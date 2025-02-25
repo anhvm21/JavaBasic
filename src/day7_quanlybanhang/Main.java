@@ -8,7 +8,7 @@ public class Main {
 //		displayMenu();
 		QuanLyBanHang qlbh = new QuanLyBanHang();
 		ArrayList<Product> products = qlbh.inputProduct();
-qlbh.sortBy(products, "Type");
+qlbh.sortBy1(products, "Price");
 	}
 
 	public static void displayMenu() {

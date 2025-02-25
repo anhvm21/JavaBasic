@@ -8,20 +8,24 @@ public class QuanLyBanHang {
 	public ArrayList<Product> inputProduct() {
 		Product gaRan = new Product();
 		Product gaSot = new Product();
-		Product tomBurger = new Product();
+		Product tomBurger1 = new Product();
+		Product tomBurger2 = new Product();
 		Product khuyenMai1 = new Product();
 		Product khuyenMai2 = new Product();
+		
 
 		gaRan.addProduct("G01", "Gà rán phần", "Khuyến Mãi", 87000);
 		gaSot.addProduct("G02", "Gà sốt", "Best Seller", 95000);
-		tomBurger.addProduct("T01", "Tôm Burger", "Best Seller", 82000);
+		tomBurger1.addProduct("T01", "Tôm Burger", "Best Seller", 82000);
+		tomBurger2.addProduct("T02", "Tôm Burger Combo", "Combo", 89000);
 		khuyenMai1.addProduct("K01", "Combo 1", "Khuyến Mãi", 59000);
 		khuyenMai2.addProduct("K02", "Combo 2", "Khuyến Mãi", 59000);
 
 		ArrayList<Product> products = new ArrayList<Product>();
 		products.add(gaRan);
 		products.add(gaSot);
-		products.add(tomBurger);
+		products.add(tomBurger1);
+		products.add(tomBurger2);
 		products.add(khuyenMai1);
 		products.add(khuyenMai2);
 		
@@ -72,4 +76,19 @@ public class QuanLyBanHang {
 		return sortedProducts;
 	}
 	
-}
+	public void sortBy1(ArrayList<Product> products, String sortedCriteria) {
+		if(sortedCriteria.equalsIgnoreCase("Type")) {
+			products.sort((p1,p2)-> {
+				return p1.getProductType().compareTo(p2.getProductType());
+			});
+		}
+		else if(sortedCriteria.equalsIgnoreCase("Price")) {
+			products.sort((p1,p2)->{
+				return Double.compare(p1.getProductPrice(),p2.getProductPrice());
+			});
+		}
+		displayProduct(products);
+
+	}
+	
+	}
